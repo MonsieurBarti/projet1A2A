@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  aside.menu
+    p.menu-label #{title}
+    ul.menu-list
+      each article, i in articles
+        li.menu-item
+          a(href='/articles/'+article._id)= article.title
