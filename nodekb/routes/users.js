@@ -32,14 +32,14 @@ router.post('/register', (req, res) => {
 
   if (errors) {
     res.render('register', {
-      errors: errors
+      errors:errors
     });
   } else {
     let newUser = new User({
-      name: name,
-      username: username,
-      email: email,
-      password: password
+      name:name,
+      username:username,
+      email:email,
+      password:password
     });
 
     bcrypt.genSalt(10, (err, salt) => {
@@ -54,7 +54,7 @@ router.post('/register', (req, res) => {
             return;
           } else {
             req.flash('success', 'You are now registered and can log in');
-            res.redirect('/user/login');
+            res.redirect('/users/login');
           }
         })
       });
@@ -71,8 +71,8 @@ router.get('/login', (req, res) => {
 //Log In Process
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/users/login',
+    successRedirect:'/',
+    failureRedirect:'/users/login',
     failureFlash: true
   })(req, res, next);
 });

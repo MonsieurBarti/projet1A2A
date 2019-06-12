@@ -11,6 +11,6 @@ block content
         input.input(name='author', type='text', value=article.author)
       #field
         label Body:
-        textarea.input(name='body')= value=article.body
+        textarea.input(name='body')= article.body
       br
       input.button.is-link(type='submit', value='Submit')

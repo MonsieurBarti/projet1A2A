@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 
-//Bring in Article Model
+//Bring in Article && User Models
 let Article = require('../models/article');
-const User = require('../models/user');
+let User = require('../models/user');
 
 //Add Route Add
 router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('add_article', {
-        title : 'Add Article'
+        title:'Add Article'
     });
 });
 
@@ -24,7 +24,7 @@ router.post('/add', (req, res) => {
 
   if (errors) {
     res.render('add_article', {
-      title: 'Add Article',
+      title:'Add Article',
       errors: errors
     });
   } else {
@@ -54,7 +54,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
       res.redirect('/');
     }
     res.render('edit_article', {
-      title: 'Edit Article',
+      title:'Edit Article',
       article:article
     });
   });
@@ -110,8 +110,8 @@ router.get('/:id', (req, res) => {
   Article.findById(req.params.id, (err, article) => {
     User.findById(article.author, (err, user) => {
       res.render('article', {
-          article: article,
-          author: user.name
+          article:article,
+          author:user.name
       });
     });
   });
