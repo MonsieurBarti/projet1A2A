@@ -1,0 +1,19 @@
+.is-error {
+  color: #fff;
+  background-color: hsl(348, 100%, 61%);
+  border-color: #fff;
+}
+
+.is-success_msg {
+  color: #fff;
+  background-color: hsl(171, 100%, 41%);
+  border-color: #fff;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

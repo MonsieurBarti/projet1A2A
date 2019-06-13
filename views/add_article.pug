@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1.title.is-1 #{title}
+    form(method='POST', action='/articles/add')
+      #field
+        label Title:
+        input.input(name='title', type='text')
+      #field
+        label Body:
+        textarea.input(name='body')
+      br
+      input.button.is-link(type='submit', value='Submit')
