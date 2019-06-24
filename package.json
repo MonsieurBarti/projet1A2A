@@ -4,7 +4,7 @@
   "description": "User System App",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "node app.js"
   },
   "author": "Pierre 'Bartiméus' LE CORFF",
   "license": "ISC",
